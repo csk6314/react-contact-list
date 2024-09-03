@@ -10,6 +10,9 @@ import useGroupModal from "./hooks/useGroupModal";
 import GroupModal from "./components/modal/GroupModal";
 import InfoModal from "./components/modal/InfoModal";
 
+//initData
+export const initalGroupData = ["가족", "친구", "직장", "스터디"];
+
 function App() {
   const isInfoModalOpen = useInfoModal((state) => state.isOpen);
   const isGroupModalOpen = useGroupModal((state) => state.isOpen);
@@ -26,9 +29,8 @@ function App() {
   const initGroupList = () => {
     const groups = JSON.parse(localStorage.getItem("groups"));
     if (!groups || groups.length < 1) {
-      const initalData = ["가족", "친구", "직장", "스터디"];
-      localStorage.setItem("groups", JSON.stringify(initalData));
-      setGroupList(initalData);
+      localStorage.setItem("groups", JSON.stringify(initalGroupData));
+      setGroupList(initalGroupData);
       return;
     }
     setGroupList(groups);

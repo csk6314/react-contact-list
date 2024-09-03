@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputEl from "./InputEl";
 import SelectEl from "./SelectEl";
+import { initalGroupData } from "../App";
 
 const patterns = {
   name: {
@@ -17,7 +18,10 @@ const patterns = {
 };
 
 const InputContainer = ({ contactList, setContactList, groupList }) => {
-  const initGroupData = JSON.parse(localStorage.getItem("groups"))[0];
+  const localStorageGroups = localStorage.getItem("groups");
+  const initGroupData = localStorageGroups
+    ? JSON.parse(localStorageGroups)[0]
+    : initalGroupData[0];
   const [contact, setContact] = useState({
     name: "",
     phone: "",

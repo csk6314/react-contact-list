@@ -1,4 +1,3 @@
-import React from "react";
 import SearchCon from "./SearchCon";
 import List from "./List";
 
