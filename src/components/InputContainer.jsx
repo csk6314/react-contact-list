@@ -17,10 +17,11 @@ const patterns = {
 };
 
 const InputContainer = ({ contactList, setContactList, groupList }) => {
+  const initGroupData = JSON.parse(localStorage.getItem("groups"))[0];
   const [contact, setContact] = useState({
     name: "",
     phone: "",
-    group: groupList[0],
+    group: initGroupData,
     record: "",
   });
 
