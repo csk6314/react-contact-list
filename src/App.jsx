@@ -64,6 +64,7 @@ function App() {
       <GroupModal
         onClose={toggleGroupModal}
         isOpen={isGroupModalOpen}
+        contactList={contactList}
         groupList={groupList}
         setGroupList={setGroupList}
       />
