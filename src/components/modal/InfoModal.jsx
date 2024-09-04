@@ -10,7 +10,8 @@ const keysInKorean = {
 
 const InfoModal = ({ isOpen, onClose, contactList }) => {
   const id = useInfoModal((state) => state.id);
-  const contact = contactList[id];
+  const contact = contactList.find((contact) => contact.id === id);
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="연락처 상세 정보">
       <div className="modal-info-content">
