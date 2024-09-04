@@ -4,15 +4,14 @@ const SearchCon = ({ setContactList }) => {
   };
 
   const searchContacts = (searchWord) => {
-    setContactList((prev) => {
-      const filteredList = prev.filter(
+    setContactList(
+      JSON.parse(localStorage.getItem("contacts")).filter(
         (contact) =>
           contact.name.includes(searchWord) ||
           contact.phone.includes(searchWord) ||
           contact.group.includes(searchWord)
-      );
-      return filteredList;
-    });
+      )
+    );
   };
 
   const handleKeyUpEvent = (e) => {
